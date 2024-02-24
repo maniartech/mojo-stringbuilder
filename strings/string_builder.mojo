@@ -1,15 +1,14 @@
 # Special Thanks to @Michael Kowalski and @Benny for the help
 # at the Mojo discord server
 
-from memory.buffer import Buffer, Dim
 from memory import memcpy
 from time import now
 from collections.vector import DynamicVector
 
 struct StringBuilder(Stringable):
   """
-  A string builder class that allows for efficient string concatenation. This
-  class is useful when you need to build a string by appending multiple strings
+  A string builder class that allows for efficient string management and concatenation.
+  This class is useful when you need to build a string by appending multiple strings
   together. It is around 10x faster than using the `+` operator to concatenate
   strings because it avoids the overhead of creating and destroying many
   intermediate strings and performs memcopy operations.
@@ -60,12 +59,45 @@ struct StringBuilder(Stringable):
 
   fn append(inout self:StringBuilder, string: String):
     """
-    Appends a string to the buffer.
+    Appends a string to the builder buffer.
 
     Args:
       string: The string to append.
     """
     self._strings.push_back(string)
+
+  fn __len__(self:StringBuilder) -> Int:
+    """
+    Returns the length of the string builder.
+
+    Returns:
+      The length of the string builder.
+    """
+    return self._strings.__len__()
+
+  fn __getitem__(self:StringBuilder, index: Int) -> String:
+    """
+    Returns the string at the given index.
+
+    Args:
+      index: The index of the string to return.
+
+    Returns:
+      The string at the given index.
+    """
+    return self._strings[index]
+
+  fn __setitem__(inout self:StringBuilder, index: Int, value: String):
+    """
+    Sets the string at the given index.
+
+    Args:
+      index: The index of the string to set.
+      value: The value to set.
+    """
+    self._strings[index] = value
+
+
 
 fn main():
   # Create a string from the buffer
