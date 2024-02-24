@@ -10,9 +10,9 @@ struct StringBuilder(Stringable):
   """
   A string builder class that allows for efficient string concatenation. This
   class is useful when you need to build a string by appending multiple strings
-  together. It is more efficient than using the `+` operator to concatenate
+  together. It is around 10x faster than using the `+` operator to concatenate
   strings because it avoids the overhead of creating and destroying many
-  intermediate strings.
+  intermediate strings and performs memcopy operations.
 
   The result is a more efficient when building larger string concatenations. It
   is generally not recommended to use this class for small concatenations such as
