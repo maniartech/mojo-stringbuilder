@@ -1,9 +1,9 @@
 # Special Thanks to @Michael Kowalski and @Benny for the help
 # at the Mojo discord server
 
-from memory import memcpy
-from time import now
 from collections.vector import DynamicVector
+from memory             import memcpy
+from time               import now
 
 struct StringBuilder(Stringable):
   """
