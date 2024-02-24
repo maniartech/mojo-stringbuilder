@@ -20,7 +20,7 @@ struct StringBuilder(Stringable):
 
   Example:
     ```
-    from strings.string_builder import StringBuilder
+    from strings.builder import StringBuilder
 
     var sb = StringBuilder()
     sb.append("mojo")
