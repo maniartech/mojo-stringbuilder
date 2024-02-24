@@ -92,3 +92,4 @@ fn main():
 
   print("StringBuilder: ", "(", t1delta, "ns)")
   print("String +: ", "(", t2delta, "ns)")
+  print("Performance difference: ", str(t2delta - t1delta) + "ns", ": StringBuilder is ", str(t2delta // t1delta) + "x faster")
