@@ -100,6 +100,14 @@ struct StringBuilder(Stringable):
     """
     self._strings[index] = value
 
+  fn __delitem__(inout self:StringBuilder, index: Int) raises:
+    """
+    Deletes the string at the given index.
+
+    Args:
+      index: The index of the string to delete.
+    """
+    raise Error("this operation is currently not supported")
 
 
 fn main():
