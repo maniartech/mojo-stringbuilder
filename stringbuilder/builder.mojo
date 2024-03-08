@@ -109,7 +109,6 @@ struct StringBuilder(Stringable):
     """
     raise Error("this operation is currently not supported")
 
-
 fn main():
   # Create a string from the buffer
   var sb = StringBuilder()
