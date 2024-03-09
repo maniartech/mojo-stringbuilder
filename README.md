@@ -62,7 +62,3 @@ fn main():
 ## Special Thanks
 
 Special thanks to @Michael Kowalski and @Benny from the Mojo Discord server for their help and support in developing this library.
-
-## Reference
-
-For more information visit the [StringBuilder thread at Mojo Discord server](https://discord.com/channels/1087530497313357884/1210530009509265469).
